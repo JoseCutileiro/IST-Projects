@@ -1,7 +1,9 @@
 # IST-Projects
 
 ***********************************************************************************************************************************************************************************
-Tic-Tac Toe -> You can change the difficult level on the last line 'jogo_do_galo('X','perfeito')' -> perfeito = Impossible to win
+Tic-Tac Toe -> You can change the difficult level on the last line 'jogo_do_galo('X','perfeito')'
+
+                                                                                                  -> perfeito = Impossible to win
 
                                                                                                   -> normal = normal level
                                                                                                   
@@ -11,7 +13,9 @@ Tic-Tac Toe -> You can change the difficult level on the last line 'jogo_do_galo
                                                                                                   
 
 *********************************************************************************************************************************************************************************** 
-Jogo do moinho -> You can change the difficult level on the last line 'moinho(cria_peca('X'),'dificil')' -> dificil = very hard
+Jogo do moinho -> You can change the difficult level on the last line 'moinho(cria_peca('X'),'dificil')'
+
+                                                                                                         -> dificil = very hard
 
                                                                                                          -> normal = medium level
                                                                                                          
