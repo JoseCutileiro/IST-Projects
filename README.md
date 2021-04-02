@@ -26,16 +26,12 @@ Jogo do moinho -> You can change the difficult level on the last line 'moinho(cr
 
 *********************************************************************************************************************************************************************************
 
-
-** Authors **
-José Cutileiro 
-Pedro Lobo
-*************
-
 IAC PROJECT -> Projecto: Introdução à arquitetura dos computadores: Language: Assembly
 
 processor: "Pepe - 16" 
 Note: please dont try this on a raspberry pi (it wont work)
+
+Authors: José Cutileiro & Pedro Lobo
 
 *********************************************************************************************************************************************************************************
 
