@@ -3,11 +3,11 @@
 ***********************************************************************************************************************************************************************************
 Tic-Tac Toe -> You can change the difficult level on the last line 'jogo_do_galo('X','perfeito')'
 
-                                                                                                  -> perfeito = Impossible to win
+             -> perfeito = Impossible to win
 
-                                                                                                  -> normal = normal level
+             -> normal = normal level
                                                                                                   
-                                                                                                  -> basico = easy level
+             -> basico = easy level
                                                                                                   
 ***********************************************************************************************************************************************************************************
                                                                                                   
@@ -15,10 +15,29 @@ Tic-Tac Toe -> You can change the difficult level on the last line 'jogo_do_galo
 *********************************************************************************************************************************************************************************** 
 Jogo do moinho -> You can change the difficult level on the last line 'moinho(cria_peca('X'),'dificil')'
 
-                                                                                                         -> dificil = very hard
+           -> dificil = very hard
 
-                                                                                                         -> normal = medium level
+           -> normal = medium level
                                                                                                          
-                                                                                                         -> facil = very easy
+           -> facil = very easy
                                                                                                          
 ***********************************************************************************************************************************************************************************
+
+
+*********************************************************************************************************************************************************************************
+**
+
+** Authors **
+José Cutileiro 
+Pedro Lobo
+*************
+
+IAC PROJECT -> Projecto: Introdução à arquitetura dos computadores: Language: Assembly
+
+processor: "Pepe - 16" 
+Note: please dont try this on a raspberry pi (it wont work)
+
+*********************************************************************************************************************************************************************************
+**
+
+
