@@ -31,7 +31,7 @@ IAC PROJECT -> Projecto: Introdução à arquitetura dos computadores: Language:
 processor: "Pepe - 16" 
 Note: please dont try this on a raspberry pi (it wont work)
 
-Authors: José Cutileiro & Pedro Lobo
+Authors: José Cutileiro & Pedro Lobo & Inês Garcia
 
 *********************************************************************************************************************************************************************************
 
