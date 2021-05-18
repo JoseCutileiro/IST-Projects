@@ -1,0 +1,18 @@
+1,5d0
+< TAMANHO: 0
+< PRIMEIRO SUB:(null)
+< proj2.c
+< README.md
+< tests
+6a2
+> README.md
+8,9d3
+< TAMANHO: 5
+< PRIMEIRO SUB:tests
+11d4
+< README.md
+14c7,8
+< guidelines.md
+---
+> test01.in
+> test02.in
