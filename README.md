@@ -39,5 +39,16 @@ Authors: José Cutileiro & Pedro Lobo & Inês Garcia
 
 Authors: José Cutileiro (99097)
          Luís Camâra (99099)
+         
+*********************************************************************************************************************************************************************************
 
+# File system v1.4
+
+Authors: José Cutileiro & Gonçalo Silva
+
+Descrição por problema
+
+1. Aumentar capacidade genérica do inode criando um sistema compativel por blocos
+2. copy_to_external_fs: o nosso sistema deve ser capaz de copiar ficheiro criados no nosso sistema de ficheiros para um sistema de ficheiros externo
+3. Programa funcional com multithread: threadsafety 
 
