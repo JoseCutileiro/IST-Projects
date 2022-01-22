@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+
+/* Named pipes ou FIFOS */ 
+
+/* Teoria: 
+
+É importante para processos que não sejam pai e filho
+comunicarem entre si, mas para isso precisamos de pipes
+com identificadores (nomes).
+
+--- Named pipe: 
+1. Canal unidirecional
+2. byte stream
+3. Identificado por um nome
+
+--- Como usar: 
+1. mkfifo: criar
+2. open
+3. eliminado com unlink
+4. Enviar e receber unsando API habitual [write/read]
+*/ 
+
+/* Exemplo */ 
+
+// VER CLIENT.C
+// VER SERVER.C
