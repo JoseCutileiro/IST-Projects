@@ -1,0 +1,27 @@
+# Projeto de PE - Pergunta 2
+# Estudante: José Cutileiro (ist199097)
+# Data: 2 de maio de 2022
+
+library(readxl)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+
+dados <- read_excel("C:\\Users\\35196\\OneDrive\\Ambiente de Trabalho\\ferias\\pest\\QualidadeARO3.xlsx", col_names = TRUE, range = "A1:J8785")
+
+dados <- select(dados,c("Estarreja","Sobreiras-Porto"))
+
+dados$Estarreja <- as.numeric(dados$Estarreja)
+dados$Estarreja <- round(dados$Estarreja,digits = 0)
+dados$`Sobreiras-Porto` <- round(dados$`Sobreiras-Porto`,digits = 0)
+
+ggplot(data=dados, aes(`Sobreiras-Porto`)) + 
+  geom_histogram()
+
+ggplot(data=dados, aes(Estarreja)) + 
+  geom_histogram()
+
+dados <- pivot_longer(dados,1:2,names_to = "Local",values_to="O3")
+
+ggplot(dados, aes(x=O3, fill=Local, color=Local)) +
+  geom_histogram(position="identity",alpha=0.2)

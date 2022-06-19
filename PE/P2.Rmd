@@ -1,0 +1,78 @@
+---
+title: "Pergunta 2"
+author: "José Cutileiro"
+date: "`r Sys.Date()`"
+output: pdf_document
+classoption: twocolumn
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r,message=FALSE}
+# Projeto de PE - Pergunta 2
+# Estudante: José Cutileiro (ist199097)
+# Data: 1 de maio de 2022
+
+library(readxl)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+
+anos <- read_excel("EsperancaVida.xlsx",
+                   col_names = TRUE,
+                   range = "A9:A70")
+homens <- read_excel("EsperancaVida.xlsx", 
+                     col_names = TRUE, 
+                     range = "AJ9:BQ70")
+mulheres <- read_excel("EsperancaVida.xlsx",
+                       col_names = TRUE, 
+                       range = "BR9:CY70")
+
+homens <- select(homens,c("NO - Noruega",
+                          "EE - Estonia",
+                          "AT - Austria"))
+mulheres <- select(mulheres,
+                   c("NO - Noruega", 
+                    "EE - Estonia",
+                    "AT - Austria"))
+
+
+homens$anos <- anos
+mulheres$anos <- anos
+
+homens <- rename(homens,Anos = 4)
+mulheres <- rename(mulheres,Anos = 4)
+
+homens <- filter(homens,homens$Anos > 2001)
+homens <- filter(homens,homens$Anos < 2020)
+
+mulheres <- filter(mulheres,
+                   mulheres$Anos > 2001)
+mulheres <- filter(mulheres,
+                   mulheres$Anos < 2020)
+
+
+homens <- pivot_longer(homens,1:3,
+                       names_to = "Pais",
+                       values_to="Valor")
+mulheres <- pivot_longer(mulheres,
+                         1:3,names_to = "Pais",
+                         values_to="Valor")
+
+homens <- cbind(homens,Sexo = "M")
+mulheres <- cbind(mulheres,Sexo = "F")
+
+df <- rbind(homens,mulheres)
+
+df <- rename(df,Ano = 1)
+
+row.names(df) <- NULL
+
+df$Ano <- unlist(df$Ano)
+
+ggplot(data=df,aes(x=Ano,
+                y=Valor,
+                color=Pais,
+                shape=Sexo))+ geom_point(size=4)
+```
