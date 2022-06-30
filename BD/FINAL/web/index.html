@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<head>
+    <title>Projeto de IVMs</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: -webkit-fill-available;
+    }
+    
+    .columns {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: -webkit-fill-available;
+    }
+
+    .retalhistas {
+        overflow: scroll;
+        height: 50vh;
+        max-height: 50vh;
+    }
+
+    .categorias {
+        overflow: scroll;
+        height: 45vh;
+        max-height: 45vh;
+    }
+
+    .eventos {
+        overflow: scroll;
+        max-height: 50vh;
+    }
+
+    .ivms {
+        overflow: scroll;
+        height: 25vh;
+        max-height: 25vh;
+    }
+
+</style>
+
+<body>
+    {% if errors %}
+    <div class="notification is-danger">
+        <strong>Ocorreu um erro: </strong>{{errors}}
+    </div>
+    {% endif %}
+    <div id="add-category" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box">
+                <form action="{{ base_url + "add_cat?cat=" + category_path + "/" }}" method="post">
+                    <div class="field">
+                        <label class="label">Nome da Categoria: </label>
+                        <div class="control">
+                            <input name="categoria" class="input" type="text">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button type="submit" class="button is-link">Adicionar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="add-retailer" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box">
+                <form action="{{ base_url + "add_ret" }}" method="post">
+                    <div class="field">
+                        <label class="label">Nome do Retalhista: </label>
+                        <div class="control">
+                            <input name="retalhista" class="input" type="text">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button type="submit" class="button is-link">Adicionar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <h1 class="title is-1">IVMs Manager V1.0.0</h1>
+    <div class="columns">
+        {% if retalhistas %}
+        <div class="column">
+            <nav class="panel">
+                <p class="panel-heading">
+                    Retalhistas
+                </p>
+                <div class="retalhistas">
+                    {% for retalhista in retalhistas %}
+                    <a class="panel-block is-active">
+                        <button onclick='handleClick(event, "{{ base_url + "delete_ret?ret=" + retalhista[0] }}")' style="margin-right: 6px;" class="delete"></button>
+                        {{retalhista[0]}}
+                    </a>
+                    {% endfor %}
+                </div>
+                <div class="panel-block">
+                    <button data-target="add-retailer" class="js-modal-trigger button is-link is-outlined is-fullwidth">
+                        Adicionar Retalhista
+                    </button>
+                </div>
+            </nav>
+        </div>
+        {% endif %}
+        {% if categorias %}
+        <div class="column">
+            <nav class="panel">
+                <p class="panel-heading">
+                    Categorias
+                </p>
+                <p class="panel-tabs">
+                    {% if category_path %}
+                        <a href="{{ base_url + current_ivm.replace("&ivm", "?ivm") }}">categorias</a>
+                        {% for categoria in category_path.split("/") %}
+                            {% if categoria != "" %}
+                                {% if categoria == category_path.split("/")[-1] %}
+                                    <a href="{{base_url + "?cat=" + category_path.split(categoria)[0]+categoria + current_ivm}}" class="is-active">{{ categoria }}</a>
+                                {% else %}
+                                    <a href="{{base_url + "?cat=" + category_path.split(categoria)[0]+categoria + current_ivm}}">{{ categoria }}</a>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <a href="{{ base_url + current_ivm.replace("&ivm", "?ivm") }}" class="is-active">categorias</a>
+                    {% endif %}
+                </p>
+                <div class="categorias">
+                    {% for categoria in categorias %}
+                    <a href="{{ base_url + "?cat=" + category_path + "/" + categoria[0] + current_ivm }}" class="panel-block is-active">
+                        <button onclick='handleClick(event, "{{ base_url + "delete_cat?cat=" + category_path + "/" + categoria[0] }}")' style="margin-right: 6px;" class="delete"></button>
+                        {{ categoria[0] }}
+                    </a>
+                    {% endfor %}
+                </div>
+                <div class="panel-block">
+                    <button data-target="add-category" class="js-modal-trigger button is-link is-outlined is-fullwidth">
+                        Adicionar Categoria
+                    </button>
+                </div>
+            </nav>
+        </div>
+        {% endif %}
+        <div class="column is-half">
+            <nav class="panel">
+                <p class="panel-heading">
+                    Eventos de reposição
+                </p>
+                {% if ivms %}
+                <div class="panel-block">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+                            <span>Selecionar IVM</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-menu ivms" id="dropdown-menu3" role="menu">
+                          <div class="dropdown-content">
+                            {% for ivm in ivms %}
+                            <a href="{{base_url + ("?cat=" + category_path + "&ivm=" if category_path != '' else '?ivm=') ~ ivm[1] ~ '-' ~ ivm[2] }}" class="dropdown-item">
+                                {{"(" ~ ivm[0] ~ " eventos) " ~ ivm[2] ~ " - " ~ ivm[1]}}
+                            </a>
+                            {% endfor %}
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                {% endif %}
+                <div class="eventos">
+                    <style>
+                        .table thead {
+                            position: sticky;
+                            top: 0;
+                            background-color: white;
+                        }
+                    </style>
+                    <table class="table is-fullwidth is-hoverable">
+                        <thead>
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Unidades</th>
+                        </tr>
+                        </thead>
+                        {% if eventos %}
+                        <tbody>
+                            {% for evento in eventos %}
+                            <tr>
+                                <td>{{evento[0]}}</td>
+                                <td>{{evento[1]}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                        {% endif %}
+                    </table>
+                </div>
+            </nav>
+        </div>
+      </div>
+      <script>
+
+            function handleClick(e, link) {
+                e.preventDefault();
+                window.location.replace(link)
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                // Functions to open and close a modal
+                function openModal($el) {
+                    $el.classList.add('is-active');
+                }
+
+                function closeModal($el) {
+                    $el.classList.remove('is-active');
+                }
+
+                (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+                    const modal = $trigger.dataset.target;
+                    const $target = document.getElementById(modal);
+
+                    $trigger.addEventListener('click', () => {
+                        openModal($target);
+                    });
+                });
+
+
+                // Add a click event on various child elements to close the parent modal
+                (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+                    const $target = $close.closest('.modal');
+
+                    $close.addEventListener('click', () => {
+                    closeModal($target);
+                    });
+                });
+
+            })
+      </script>
+</body>
