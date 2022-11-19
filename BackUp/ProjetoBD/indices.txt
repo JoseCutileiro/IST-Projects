@@ -1,0 +1,80 @@
+>>> 7.Indices 
+
+Pressupostos: 
+1. O tamanho das tabelas EXCEDE a memória 
+	disponivel em várias ordens de magnitude.
+2. Não existem índices nas tabelas (além dos implicitos
+	ao declarar PK e FK)
+
+
+>>>> 7.1 
+
+Objetivo: Saber o nome de quais os retalhistas
+	são resposáveis por uma dada categoria (i.e 'Frutos')
+
+Query: 
+	SELECT DISTINCT R.nome
+	FROM retalhista, resposavel_por P 
+	WHERE R.tin = P.tin and P.nome_cat = 'Frutos'
+
+Que indice usar:
+	1. O indice a utilizar deve ser não ordenado
+	dado nenhuma das colunas das nossas tabelas tem uma
+	ordem especificada.
+
+	2. O indice a utilizar deve ser denso dado que 
+	os esparsos só podem ser utilizados caso as colunas estejam
+	ordenadas de alguma forma.
+
+	3. Os indices de dispersão são os melhores para selecionar 
+	entradas por igualdade. Neste exemplo estamos a selecionar 
+	os nomes dos retalhistas que são resposáveis pelas categorias 
+	IGUAIS a 'Frutos'. Dada a igualdade o indice escolhido deverá ser 
+	um indice de dispersão. Deverá também ser dinâmica dado que o nº de
+	contentores pode variar ao longo do ciclo de vida do índice.
+
+Conclusão: 
+	O indice deve ser 
+		- Não ordenado
+		- Denso
+		- Dispersão dinâmica
+
+
+>>>> 7.2 
+
+Objetivo: Contar quantos produtos estão 
+	associados a cada categoria e tem uma descrição 
+	num dado formato (i.e Começar pela letra A)
+
+Query: 
+	SELECT T.nome, COUNT(T.ean)
+	FROM produto P, tem_categoria T
+	WHERE p.cat = T.nome AND P.desc LIKE 'A%'
+	GROUP BY Y.nome
+
+Que indice usar:
+	1. O indice a utilizar deve ser não ordenado
+	dado nenhuma das colunas das nossas tabelas tem uma
+	ordem especificada.
+
+	2. O indice a utilizar deve ser denso dado que 
+	os esparsos só podem ser utilizados caso as colunas estejam
+	ordenadas de alguma forma.
+
+	3. A chave de procura deverá ser composta 
+	dado que as interrugações requerem várias comparações
+	(Nome da categoria e Descrição associada ao produto)
+
+	4. Deverá ser utilizado um Indice do tipo B+,
+	mesmo que tenhamos um número muito grande de 
+	entradas selecionadas, é possível chegar 
+	rapidamente aos  objetivos e com um custo de memória
+	adicional bastante diminuto. Se houver algum 
+	UPDATE na tabela, basta fazermos pequenas alterações
+	locais no indice para que este funcione novamente.
+
+Conclusão:
+	O indice deve ser:
+		- Não ordenado
+		- Denso
+		- B+
