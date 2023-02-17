@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<head>
+    <title>MultiCLicker</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: -webkit-fill-available;
+    }
+    
+    .columns {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: -webkit-fill-available;
+    }
+
+    .retalhistas {
+        overflow: scroll;
+        height: 50vh;
+        max-height: 50vh;
+    }
+
+    .categorias {
+        overflow: scroll;
+        height: 45vh;
+        max-height: 45vh;
+    }
+
+    .eventos {
+        overflow: scroll;
+        max-height: 50vh;
+    }
+
+    .ivms {
+        overflow: scroll;
+        height: 25vh;
+        max-height: 25vh;
+    }
+
+</style>
+
+<body>
+    {% if errors %}
+    <div class="notification is-danger">
+        <strong>Ocorreu um erro: </strong>{{errors}}
+    </div>
+    {% endif %}
+    <div id="add-category" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box">
+                <form action="{{ base_url + "add_cat?cat=" + category_path + "/" }}" method="post">
+                    <div class="field">
+                        <label class="label">Nome da Categoria: </label>
+                        <div class="control">
+                            <input name="categoria" class="input" type="text">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button type="submit" class="button is-link">Adicionar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="add-player" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box">
+                <form action="{{ base_url + "add_player" }}" method="post">
+                    <div class="field">
+                        <label class="label">Select your name: </label>
+                        <div class="control">
+                            <input name="player" class="input" type="text">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button type="submit" class="button is-link">Confirm</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <h1 class="title is-1">Multi Clicker v0.1.1</h1>
+    <div class="columns">
+        {% if players %}
+        <div class="column">
+            <nav class="panel">
+                <p class="panel-heading">
+                    Top Players
+                </p>
+                <div class="panel-block">
+                    <button data-target="add-player" class="js-modal-trigger button is-link is-outlined is-fullwidth">
+                        +++ New player +++
+                    </button>
+                </div>
+                <div class="players">
+                    {% for player in players %}
+                    <a class="panel-block is-active">
+                        <button onclick='handleClick(event, "{{ base_url + "add_points?ret=" + player[0] }}")' style="margin-right: 6px;" class="button is-success"></button>
+                        <button onclick='handleClick(event, "{{ base_url + "rem_points?ret=" + player[0] }}")' style="margin-right: 6px;" class="button is-danger"></button>
+                         <b>NAME: </b>{{player[0]}}
+                         <b> POINTS: </b>{{player[1]}}
+                         <b> ID: </b> {{player[2]}}  
+                    </a>
+                    {% endfor %}
+                </div>
+                <div class="panel-block">
+                    <button data-target="add-player" class="js-modal-trigger button is-link is-outlined is-fullwidth">
+                        +++ New player +++
+                    </button>
+                </div>
+            </nav>
+        </div>
+        {% endif %}
+        {% if players %}
+        <div class="column">
+            <nav class="panel">
+                <p class="panel-heading">
+                    New Players
+                </p>
+                <div class="panel-block">
+                    <button data-target="add-player" class="js-modal-trigger button is-link is-outlined is-fullwidth">
+                        +++ New player +++
+                    </button>
+                </div>
+                <p class="panel-tabs">
+                    <div class="new_players">
+                        {% for player in new_players %}
+                        <a class="panel-block is-active">
+                            <button onclick='handleClick(event, "{{ base_url + "add_points?ret=" + player[0] }}")' style="margin-right: 6px;" class="button is-success"></button>
+                            <button onclick='handleClick(event, "{{ base_url + "rem_points?ret=" + player[0] }}")' style="margin-right: 6px;" class="button is-danger"></button>
+                             <b>NAME: </b>{{player[0]}}
+                             <b> POINTS: </b>{{player[1]}}
+                             <b> ID: </b> {{player[2]}}  
+                        </a>
+                        {% endfor %}
+                    </div>
+                <div class="panel-block">
+                    <button data-target="add-player" class="js-modal-trigger button is-link is-outlined is-fullwidth">
+                        +++ New player +++
+                    </button>
+                </div>
+            </nav>
+        </div>
+        {% endif %}
+        {% if players %}
+        <div class="column">
+            <nav class="panel">
+                <p class="panel-heading">
+                    Old Players
+                </p>
+                <div class="panel-block">
+                    <button data-target="add-player" class="js-modal-trigger button is-link is-outlined is-fullwidth">
+                        +++ New player +++
+                    </button>
+                </div>
+                <p class="panel-tabs">
+                    <div class="old_players">
+                        {% for player in old_players %}
+                        <a class="panel-block is-active">
+                            <button onclick='handleClick(event, "{{ base_url + "add_points?ret=" + player[0] }}")' style="margin-right: 6px;" class="button is-success"></button>
+                            <button onclick='handleClick(event, "{{ base_url + "rem_points?ret=" + player[0] }}")' style="margin-right: 6px;" class="button is-danger"></button>
+                             <b>NAME: </b>{{player[0]}}
+                             <b> POINTS: </b>{{player[1]}}
+                             <b> ID: </b> {{player[2]}}  
+                        </a>
+                        {% endfor %}
+                    </div>
+                <div class="panel-block">
+                    <button data-target="add-player" class="js-modal-trigger button is-link is-outlined is-fullwidth">
+                        +++ New player +++
+                    </button>
+                </div>
+            </nav>
+        </div>
+        {% endif %}
+      <script>
+
+            function handleClick(e, link) {
+                e.preventDefault();
+                window.location.replace(link)
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                // Functions to open and close a modal
+                function openModal($el) {
+                    $el.classList.add('is-active');
+                }
+
+                function closeModal($el) {
+                    $el.classList.remove('is-active');
+                }
+
+                (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+                    const modal = $trigger.dataset.target;
+                    const $target = document.getElementById(modal);
+
+                    $trigger.addEventListener('click', () => {
+                        openModal($target);
+                    });
+                });
+
+
+                // Add a click event on various child elements to close the parent modal
+                (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+                    const $target = $close.closest('.modal');
+
+                    $close.addEventListener('click', () => {
+                    closeModal($target);
+                    });
+                });
+
+            })
+      </script>
+</body>
