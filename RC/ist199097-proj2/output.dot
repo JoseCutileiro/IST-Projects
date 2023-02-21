@@ -1,0 +1,382 @@
+digraph N {
+  label = "t=0";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled,bold" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "∞" style = "bold" arrowtail = "dot" arrowhead = "none"];
+}
+
+digraph N {
+  label = "t=0";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled,bold" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "dot"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node0 -> node1 [ color = "gray" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=0";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled,bold" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node1 -> node2 [ dir = "both" label = "∞" style = "bold" arrowtail = "dot" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node0 -> node1 [ color = "gray" style = "dashed" ];
+  node1 -> node0 [ color = "gray" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=0";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled,bold" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node1 -> node2 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "dot"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node1 -> node2 [ color = "/set19/3" fontcolor = "/set19/3" label = "1" ];
+  node0 -> node1 [ color = "gray" style = "dashed" ];
+  node1 -> node0 [ color = "gray" style = "dashed" ];
+  node1 -> node0 [ color = "gray" style = "dashed" ];
+  node1 -> node2 [ color = "gray" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=1";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled,bold" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node1 -> node2 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node1 -> node2 [ color = "/set19/3" fontcolor = "/set19/3" label = "1" ];
+  node2 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node0 -> node1 [ color = "black" style = "dashed" ];
+  node1 -> node0 [ color = "gray" style = "dashed" ];
+  node1 -> node0 [ color = "gray" style = "dashed" ];
+  node1 -> node2 [ color = "gray" style = "dashed" ];
+  node2 -> node1 [ color = "gray" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=1";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled,bold" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node1 -> node2 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node1 -> node2 [ color = "/set19/3" fontcolor = "/set19/3" label = "1" ];
+  node2 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node1 -> node0 [ color = "black" style = "dashed" ];
+  node1 -> node0 [ color = "gray" style = "dashed" ];
+  node1 -> node2 [ color = "gray" style = "dashed" ];
+  node2 -> node1 [ color = "gray" style = "dashed" ];
+  node1 -> node0 [ color = "gray" style = "dashed" ];
+  node1 -> node2 [ color = "gray" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=1";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled,bold" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node1 -> node2 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node1 -> node2 [ color = "/set19/3" fontcolor = "/set19/3" label = "1" ];
+  node2 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node1 -> node0 [ color = "black" style = "dashed" ];
+  node1 -> node2 [ color = "gray" style = "dashed" ];
+  node2 -> node1 [ color = "gray" style = "dashed" ];
+  node1 -> node0 [ color = "gray" style = "dashed" ];
+  node1 -> node2 [ color = "gray" style = "dashed" ];
+  node0 -> node1 [ color = "gray" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=1";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled,bold" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node1 -> node2 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node0 -> node1 [ color = "/set19/3" fontcolor = "/set19/3" label = "2" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node1 -> node2 [ color = "/set19/3" fontcolor = "/set19/3" label = "1" ];
+  node2 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node1 -> node2 [ color = "black" style = "dashed" ];
+  node2 -> node1 [ color = "gray" style = "dashed" ];
+  node1 -> node0 [ color = "gray" style = "dashed" ];
+  node1 -> node2 [ color = "gray" style = "dashed" ];
+  node0 -> node1 [ color = "gray" style = "dashed" ];
+  node0 -> node1 [ color = "gray" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=1";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled,bold" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node1 -> node2 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node0 -> node1 [ color = "/set19/3" fontcolor = "/set19/3" label = "2" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node1 -> node2 [ color = "/set19/3" fontcolor = "/set19/3" label = "1" ];
+  node2 -> node1 [ color = "/set19/1" fontcolor = "/set19/1" label = "2" ];
+  node2 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node2 -> node1 [ color = "black" style = "dashed" ];
+  node1 -> node0 [ color = "gray" style = "dashed" ];
+  node1 -> node2 [ color = "gray" style = "dashed" ];
+  node0 -> node1 [ color = "gray" style = "dashed" ];
+  node0 -> node1 [ color = "gray" style = "dashed" ];
+  node2 -> node1 [ color = "gray" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=2";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled,bold" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node1 -> node2 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node0 -> node1 [ color = "/set19/3" fontcolor = "/set19/3" label = "2" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node1 -> node2 [ color = "/set19/3" fontcolor = "/set19/3" label = "1" ];
+  node2 -> node1 [ color = "/set19/1" fontcolor = "/set19/1" label = "2" ];
+  node2 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node1 -> node0 [ color = "black" style = "dashed" ];
+  node1 -> node2 [ color = "gray" style = "dashed" ];
+  node0 -> node1 [ color = "gray" style = "dashed" ];
+  node0 -> node1 [ color = "gray" style = "dashed" ];
+  node2 -> node1 [ color = "gray" style = "dashed" ];
+  node1 -> node0 [ color = "gray" style = "dashed" ];
+  node1 -> node2 [ color = "gray" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=2";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled,bold" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node1 -> node2 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node0 -> node1 [ color = "/set19/3" fontcolor = "/set19/3" label = "2" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node1 -> node2 [ color = "/set19/3" fontcolor = "/set19/3" label = "1" ];
+  node2 -> node1 [ color = "/set19/1" fontcolor = "/set19/1" label = "2" ];
+  node2 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node1 -> node2 [ color = "black" style = "dashed" ];
+  node0 -> node1 [ color = "gray" style = "dashed" ];
+  node0 -> node1 [ color = "gray" style = "dashed" ];
+  node2 -> node1 [ color = "gray" style = "dashed" ];
+  node1 -> node0 [ color = "gray" style = "dashed" ];
+  node1 -> node2 [ color = "gray" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=2";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled,bold" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node1 -> node2 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node0 -> node1 [ color = "/set19/3" fontcolor = "/set19/3" label = "2" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node1 -> node2 [ color = "/set19/3" fontcolor = "/set19/3" label = "1" ];
+  node2 -> node1 [ color = "/set19/1" fontcolor = "/set19/1" label = "2" ];
+  node2 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node0 -> node1 [ color = "black" style = "dashed" ];
+  node0 -> node1 [ color = "gray" style = "dashed" ];
+  node2 -> node1 [ color = "gray" style = "dashed" ];
+  node1 -> node0 [ color = "gray" style = "dashed" ];
+  node1 -> node2 [ color = "gray" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=2";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled,bold" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node1 -> node2 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node0 -> node1 [ color = "/set19/3" fontcolor = "/set19/3" label = "2" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node1 -> node2 [ color = "/set19/3" fontcolor = "/set19/3" label = "1" ];
+  node2 -> node1 [ color = "/set19/1" fontcolor = "/set19/1" label = "2" ];
+  node2 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node0 -> node1 [ color = "black" style = "dashed" ];
+  node2 -> node1 [ color = "gray" style = "dashed" ];
+  node1 -> node0 [ color = "gray" style = "dashed" ];
+  node1 -> node2 [ color = "gray" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=2";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled,bold" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node1 -> node2 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node0 -> node1 [ color = "/set19/3" fontcolor = "/set19/3" label = "2" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node1 -> node2 [ color = "/set19/3" fontcolor = "/set19/3" label = "1" ];
+  node2 -> node1 [ color = "/set19/1" fontcolor = "/set19/1" label = "2" ];
+  node2 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node2 -> node1 [ color = "black" style = "dashed" ];
+  node1 -> node0 [ color = "gray" style = "dashed" ];
+  node1 -> node2 [ color = "gray" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=2";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled,bold" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node1 -> node2 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node0 -> node1 [ color = "/set19/3" fontcolor = "/set19/3" label = "2" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node1 -> node2 [ color = "/set19/3" fontcolor = "/set19/3" label = "1" ];
+  node2 -> node1 [ color = "/set19/1" fontcolor = "/set19/1" label = "2" ];
+  node2 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node1 -> node0 [ color = "black" style = "dashed" ];
+  node1 -> node2 [ color = "gray" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=2";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled,bold" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node1 -> node2 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node0 -> node1 [ color = "/set19/3" fontcolor = "/set19/3" label = "2" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node1 -> node2 [ color = "/set19/3" fontcolor = "/set19/3" label = "1" ];
+  node2 -> node1 [ color = "/set19/1" fontcolor = "/set19/1" label = "2" ];
+  node2 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node1 -> node2 [ color = "black" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=10";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled,bold" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node1 -> node2 [ dir = "both" label = "1" style = "bold" arrowtail = "dot" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node0 -> node1 [ color = "/set19/3" fontcolor = "/set19/3" label = "2" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node1 -> node2 [ color = "/set19/3" fontcolor = "/set19/3" label = "1" ];
+  node2 -> node1 [ color = "/set19/1" fontcolor = "/set19/1" label = "2" ];
+  node2 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+}
+
+digraph N {
+  label = "t=10";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled,bold" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node1 -> node2 [ dir = "both" label = "∞" style = "bold" arrowtail = "none" arrowhead = "dot"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node0 -> node1 [ color = "/set19/3" fontcolor = "/set19/3" label = "2" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node2 -> node1 [ color = "/set19/1" fontcolor = "/set19/1" label = "2" ];
+  node2 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node1 -> node0 [ color = "gray" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=11";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled,bold" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node0 -> node1 [ color = "/set19/3" fontcolor = "/set19/3" label = "2" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node1 -> node0 [ color = "black" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=12";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled,bold" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+  node0 -> node1 [ color = "black" style = "dashed" ];
+}
+
+digraph N {
+  label = "t=12";
+  labelloc = "top";
+  labeljust = "left";
+  node0 [ label = "0" style = "filled" fillcolor = "/set19/1" ];
+  node1 [ label = "1" style = "filled" fillcolor = "/set19/2" ];
+  node2 [ label = "2" style = "filled" fillcolor = "/set19/3" ];
+  node0 -> node1 [ dir = "both" label = "1" style = "bold" arrowtail = "none" arrowhead = "none"];
+  node0 -> node1 [ color = "/set19/2" fontcolor = "/set19/2" label = "1" ];
+  node1 -> node0 [ color = "/set19/1" fontcolor = "/set19/1" label = "1" ];
+}
+
