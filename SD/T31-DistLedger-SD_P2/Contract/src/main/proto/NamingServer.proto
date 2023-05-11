@@ -1,0 +1,37 @@
+syntax = "proto3";
+package pt.ulisboa.tecnico.distledger.contract.namingserver;
+
+
+message RegisterRequest {
+	string service = 1;
+	string qual = 2;
+	string target = 3;
+}
+
+message RegisterResponse {
+	// EMPTY
+}
+
+message LookupRequest {
+	string service = 1;
+	string qual = 2;
+}
+
+message LookupResponse {
+	repeated string target = 1;
+}
+
+message DeleteRequest {
+	string service = 1;
+	string target = 2;
+}
+
+message DeleteResponse {
+	// EMPTY
+}
+
+service NamingServerService {
+	rpc register(RegisterRequest) returns (RegisterResponse);
+	rpc lookup(LookupRequest) returns (LookupResponse);
+	rpc delete(DeleteRequest) returns (DeleteResponse);
+}
